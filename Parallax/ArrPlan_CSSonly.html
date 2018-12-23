@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Images Multiples en arriére plan uniquement en CSS</title>
+
+    <style type="text/css">
+        @keyframes example {
+            
+    0%   {
+        background-image: url(../img/carousel1.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        }
+    25%  {        
+        background-image: url(../img/carousel2.jpg);
+        background-size: cover;
+                background-attachment: fixed;
+
+}
+    50%  {
+        background-image: url(../img/carousel3.jpg);
+        background-size: cover;     
+                background-attachment: fixed;
+
+            }
+            
+            
+    100% {
+        background: url(../img/carousel1.jpg);
+        background-size: cover;
+                background-attachment: fixed;
+
+          
+            }
+}
+        body {
+       animation-name: example;
+        animation-duration: 8s;
+             animation-iteration-count: 2;
+    animation-direction: alternate-reverse;
+        animation-timing-function: ease-in;
+        }
+              
+        
+    </style>
+
+</head>
+
+<body>
+
+  
+</body>
+
+</html>

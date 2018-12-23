@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Blur Effect sur image d'arrière Plan</title>
+
+    <style type="text/css">
+        @import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body, html {
+        height: 100%;
+        }
+
+        .bg-image {
+            background: url(../img/carousel4AR.jpg);
+           /* Add the blur effect */
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+            /* Full height */
+            height: 100%; 
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+        
+        .texte {
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */            
+            font-family: "Open Sans", Helvetica, Arial, sans-serif;
+            color: white;
+            font-weight: bold;
+            border: 3px solid #f1f1f1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bg-image"> </div>
+
+
+        <div class="texte">
+            <h1>Blurred Background</h1>
+
+            <h2>Blurred Background</h2>
+            <p>
+                Animez uniquement quatre propriétés : translate3d, scale, rotate et opacity. Pourquoi translate3d et non pas translate me direz-vous ? Comme dit plus haut, nos appareils possèdent désormais tous une carte graphique. Lorsque vous utilisez translate3d, cela force le GPU (processeur graphique) à gérer les translations. Donc cela libère d’une tâche lourde le processeur principal déjà bien exploité. Petit conseil également : limitez les effets de scale (mise à l’échelle) et rotate (rotation) sur des visuels lourds si vous ne voulez pas avoir un site qui tourne au ralenti.
+                Animez uniquement les éléments lorsqu’ils sont visibles à l’écran. Cela semble logique mais il est toujours bon de rappeler que les éléments non visibles à l’écran n’ont aucun intérêt pour l’utilisateur. Inutile donc de les animer lorsqu’ils sont en dehors du viewport.
+                Utilisez RequestAnimationFrame pour optimiser la fluidité. Nos navigateurs effectuent un travail complexe : ils parcourent nos fichiers HTML et CSS, les interprètent puis peignent des pixels à l’écran. RequestAnimationFrame dit à votre navigateur qu’une animation sera à calculer au prochain “repaint” et optimise les performances. Contrairement à setInterval, le navigateur “refait la peinture” lorsqu’il est libre de le faire, il n’est pas surchargé par une boucle lui demandant de peindre de façon abusive et constante. Pour en savoir plus, voici un excellent article.
+                N’animez pas tout sous prétexte que vous le pouvez ! Choisissez avec précaution les éléments que vous souhaitez animer et surtout, sachez vous modérer si la fluidité commence à pâtir.</p>
+        </div>
+   
+
+</body>
+
+</html>
